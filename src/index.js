@@ -4,11 +4,14 @@ const colors = require("colors");
 
 const commandHandler = require("./handlers/command.handler.js");
 
+const apiHandler = require("./handlers/api.handler.js");
+
 const { token } = require("./config/config.js");
 const { log } = console;
 
 // Initialize command handler
 commandHandler(client);
+apiHandler(client);
 
 client.on("ready", () => {
   log(`Logged in as ${client.user.tag}!`);
